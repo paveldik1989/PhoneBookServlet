@@ -75,7 +75,15 @@ new Vue({
                 var contactListFormServer = JSON.parse(response);
                 self.rows = self.convertContactList(contactListFormServer);
             });
+        },
+        deleteContact: function (row) {
+            this.rows = this.rows.filter(function (currentRow) {
+                return currentRow !== row;
+            });
+
+            alert("Delete");
         }
+
     },
     computed: {
         firstNameError: function () {

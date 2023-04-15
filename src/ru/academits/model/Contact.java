@@ -54,8 +54,10 @@ public class Contact {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Contact contact = (Contact) o;
-        return id == contact.id && important == contact.important && firstName.equals(contact.firstName) && lastName.equals(contact.lastName) && phone.equals(contact.phone);
+        return  firstName.equals(contact.firstName) && lastName.equals(contact.lastName) && phone.equals(contact.phone);
     }
+
+    //id == contact.id && important == contact.important &&
 
     @Override
     public int hashCode() {

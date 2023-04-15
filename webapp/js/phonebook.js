@@ -81,9 +81,15 @@ new Vue({
                 return currentRow !== row;
             });
 
-            alert("Delete");
-        }
+            var contact = new Contact(row.firstName, row.lastName, row.phone);
 
+            $.ajax({
+                type: "POST",
+                url: "/phonebook/delete",
+                data: JSON.stringify(contact),
+                dataType: "json"
+            });
+        }
     },
     computed: {
         firstNameError: function () {
